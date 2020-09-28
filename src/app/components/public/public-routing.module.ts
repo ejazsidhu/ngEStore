@@ -9,16 +9,21 @@ import { PublicRootComponent } from './public-root/public-root.component';
 
 const routes: Routes = [
   {
-    path: '', component: PublicRootComponent, children: [
-      { path: '', redirectTo: 'porducts', pathMatch: 'full' },
+    path: '', component: PublicRootComponent,
+    children: [
+      { path: '', component: ProductsComponent },
+      { path: '', redirectTo: 'porducts', pathMatch: 'prefix' },
       { path: 'products', component: ProductsComponent },
       { path: 'product/:id', component: ProductDetialComponent },
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
+      { path: '**', redirectTo: 'porducts', pathMatch: 'full' },
 
-      { path: '**', redirectTo: '', pathMatch: 'full' },
     ]
+
   },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
+
 ];
 
 @NgModule({
