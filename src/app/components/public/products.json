@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "carets",
+    "description": "Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis magna nec,",
+    "price": 10,
+    "imageUrl": "assets/images/img-pro-01.jpg",
+    "tag": "sale"
+  },
+  {
+    "id": 2,
+    "title": "tomato",
+    "description": "Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis magna nec,lobortis aliquet.",
+    "price": 50,
+    "imageUrl": "assets/images/img-pro-02.jpg",
+    "tag": "new"
+  },
+  {
+    "id": 3,
+    "title": "lasura",
+    "description": "Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis magna nec",
+    "price": 35,
+    "imageUrl": "assets/images/img-pro-03.jpg",
+    "tag": "sale"
+  },
+  {
+    "id": 4,
+    "title": "carets",
+    "description": "Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis magna nec,",
+    "price": 10,
+    "imageUrl": "assets/images/img-pro-01.jpg",
+    "tag": "sale"
+  },
+  {
+    "id": 5,
+    "title": "tomato",
+    "description": "Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis magna nec,  iaculis ultrices ante.",
+    "price": 50,
+    "imageUrl": "assets/images/img-pro-02.jpg",
+    "tag": "new"
+  },
+  {
+    "id": 6,
+    "title": "lasura",
+    "description": "Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis",
+    "price": 35,
+    "imageUrl": "assets/images/img-pro-03.jpg",
+    "tag": "sale"
+  }
+]
