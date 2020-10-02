@@ -9,6 +9,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PublicRootComponent } from './public-root/public-root.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ContactUsComponent,],
   imports: [
     CommonModule,
+    SharedModule,
     PublicRoutingModule
   ]
 })
