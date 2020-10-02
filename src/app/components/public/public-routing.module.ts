@@ -12,7 +12,7 @@ const routes: Routes = [
     path: '', component: PublicRootComponent,
     children: [
       { path: '', component: ProductsComponent },
-      { path: '', redirectTo: 'porducts', pathMatch: 'prefix' },
+      // { path: '', redirectTo: 'porducts', pathMatch: 'full' },
       { path: 'products', component: ProductsComponent },
       { path: 'product/:id', component: ProductDetialComponent },
       { path: 'cart', component: CartComponent },
