@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as data from "../products.json";
-import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-products',
@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 export class ProductsComponent implements OnInit {
 
   productList: any = [];
+  ProductService: any = [];
+  Product: any = [];
+  
 
   constructor() { }
 
@@ -18,6 +21,11 @@ export class ProductsComponent implements OnInit {
     this.productList = (data as any).default;
     console.log(this.productList)
 
+  }
+  showProduct() {
+    this.ProductService.getProduct()
+      .subscribe((data: ProductService) => this.ProductService = {
+      });
   }
 
 }
