@@ -13,6 +13,7 @@ export class ProductsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
     this.productList = (data as any).default;
     console.log(this.productList)
 
