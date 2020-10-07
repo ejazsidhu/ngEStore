@@ -8,4 +8,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
   
+  ProductUrl = './products/products.component';
+
+  getProduct() {
+    return this.http.get(this.ProductUrl);
 }
