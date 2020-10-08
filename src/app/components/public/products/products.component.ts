@@ -12,7 +12,8 @@ export class ProductsComponent implements OnInit {
   productList: any = [];
   ProductService;
   Product;
-  serverIp = 'https://re.rtdtradetracker.com'
+  serverIp = 'https://re.rtdtradetracker.com';
+  serach: ''
 
 
   constructor(private productService: ProductService) { }
