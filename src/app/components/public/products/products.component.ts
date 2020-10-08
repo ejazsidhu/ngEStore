@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   ProductService;
   Product;
   serverIp = 'https://re.rtdtradetracker.com';
-  serach: ''
+  filter: ''
 
 
   constructor(private productService: ProductService) { }
@@ -30,6 +30,13 @@ export class ProductsComponent implements OnInit {
       .subscribe((data) => {
         this.productList = data
       });
+  }
+
+  errorImageCalled(event) {
+    console.log('error image called', event)
+    let url = "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled.png";
+    event.target.src = url;
+
   }
 
 }

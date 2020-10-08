@@ -5,7 +5,7 @@ import { NavbarComponent } from '../components/layout/navbar/navbar.component';
 import { MainSliderComponent } from '../components/layout/main-slider/main-slider.component';
 import { BottomSliderComponent } from '../components/layout/bottom-slider/bottom-slider.component';
 import { FooterComponent } from '../components/layout/footer/footer.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -17,13 +17,15 @@ import { FooterComponent } from '../components/layout/footer/footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    Ng2SearchPipeModule
   ],
   exports: [
     TopBannerComponent,
     NavbarComponent,
     MainSliderComponent,
     BottomSliderComponent,
-    FooterComponent]
+    FooterComponent,
+    Ng2SearchPipeModule]
 })
 export class SharedModule { }

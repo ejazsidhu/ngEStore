@@ -7,7 +7,7 @@
           <div class="product-item-filter row">
             <div class="col-12 col-sm-8 text-center text-sm-left">
               <div class="toolbar-sorter-right">
-                <input type="text" name="serach" class="form-control" [(ngModel)]="search"
+                <input type="text" name="filter" class="form-control" [(ngModel)]="filter"
                   placeholder="serach item here...">
                 <!-- <span>Sort by </span>
                 <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
@@ -18,7 +18,7 @@
                   <option value="4">Best Selling</option>
                 </select> -->
               </div>
-              <p>Showing all {{productList?.length}} results</p>
+              <!-- <p>Showing all {{productList?.length}} results</p> -->
             </div>
             <div class="col-12 col-sm-4 text-center text-sm-right">
               <ul class="nav nav-tabs ml-auto">
@@ -36,13 +36,14 @@
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                 <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let item of productList">
+                  <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let item of productList |filter:filter ">
                     <div class="products-single fix">
                       <div class="box-img-hover">
                         <div class="type-lb">
                           <p [ngClass]="{'new': item.tag=='new','sale': item.tag=='sale'}">{{item?.tag}}</p>
                         </div>
-                        <img src="{{serverIp}}{{item?.imageUrl}}" class="img-fluid" alt="Image">
+                        <img src="{{serverIp}}{{item?.imageUrl}}" class="img-fluid" alt="No Image Found"
+                          (error)="errorImageCalled($event)">
                         <div class="mask-icon">
                           <!-- <ul>
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
@@ -74,7 +75,8 @@
                           <div class="type-lb">
                             <p [ngClass]="{'new': item.tag=='new','sale': item.tag=='sale'}">New</p>
                           </div>
-                          <img src="{{serverIp}}{{item?.imageUrl}}" class="img-fluid" alt="Image">
+                          <img src="{{serverIp}}{{item?.imageUrl}}" class="img-fluid" alt="Image"
+                            (error)="errorImageCalled($event)">
                           <!-- <div class="mask-icon">
                             <ul>
                               <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i
