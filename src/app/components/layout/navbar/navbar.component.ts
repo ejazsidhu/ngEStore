@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
     this.cartService.cartData.subscribe((data: any) => {
       this.cart = data;
       this.cart = [...new Set(this.cart)]
-      console.log("cart component", this.cart);
+      // console.log("cart component", this.cart);
     })
   }
 

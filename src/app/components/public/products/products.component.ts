@@ -24,15 +24,16 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.productList = (data as any).default;
-    console.log(this.productList)
+    // this.productList = (data as any).default;
+    // console.log(this.productList)
     this.showProduct();
 
   }
   showProduct() {
     this.productService.getProduct()
       .subscribe((data) => {
-        // this.productList = data
+        this.productList = data;
+        this.productService.updateProductList(this.productList)
       });
   }
 
@@ -43,16 +44,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(item) {
-    // console.log(this.cart.find(i => i.id == item.id))
-    // if (this.dummayCart.findIndex(c => c.id == item.id) !== -1) {
-    //   this.dummayCart.slice(this.dummayCart.findIndex(c => c.id == item.id), 0)
-    // }
 
-    // let cartObj = {
-    //   item: this.cart.find(i => i.id == item.id),
-    //   quantity: this.cart.filter(c => c.id == item.id) ? this.cart.filter(c => c.id === item.id).length : 1
-    // }
-    // this.dummayCart = [...this.dummayCart, cartObj];
 
     console.log(this.cart);
 
