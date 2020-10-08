@@ -5,8 +5,8 @@ import { NavbarComponent } from '../components/layout/navbar/navbar.component';
 import { MainSliderComponent } from '../components/layout/main-slider/main-slider.component';
 import { BottomSliderComponent } from '../components/layout/bottom-slider/bottom-slider.component';
 import { FooterComponent } from '../components/layout/footer/footer.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
   ],
   imports: [
     CommonModule,
-    Ng2SearchPipeModule
+    NgxPaginationModule
   ],
   exports: [
     TopBannerComponent,
@@ -26,6 +26,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MainSliderComponent,
     BottomSliderComponent,
     FooterComponent,
-    Ng2SearchPipeModule]
+
+    NgxPaginationModule]
 })
 export class SharedModule { }

@@ -1,3 +1,6 @@
 img.img-fluid {
   height: 300px;
 }
+.product-item-filter p {
+  float: none;
+}

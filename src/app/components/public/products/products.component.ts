@@ -13,7 +13,8 @@ export class ProductsComponent implements OnInit {
   ProductService;
   Product;
   serverIp = 'https://re.rtdtradetracker.com';
-  filter: ''
+  search: '';
+  page: number = 0;
 
 
   constructor(private productService: ProductService) { }
@@ -28,7 +29,7 @@ export class ProductsComponent implements OnInit {
   showProduct() {
     this.productService.getProduct()
       .subscribe((data) => {
-        this.productList = data
+        // this.productList = data
       });
   }
 

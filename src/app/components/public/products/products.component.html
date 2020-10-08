@@ -7,8 +7,8 @@
           <div class="product-item-filter row">
             <div class="col-12 col-sm-8 text-center text-sm-left">
               <div class="toolbar-sorter-right">
-                <input type="text" name="filter" class="form-control" [(ngModel)]="filter"
-                  placeholder="serach item here...">
+                <p>Total Items: {{productList?.length}} </p>
+
                 <!-- <span>Sort by </span>
                 <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
                   <option data-display="Select">Nothing</option>
@@ -18,7 +18,6 @@
                   <option value="4">Best Selling</option>
                 </select> -->
               </div>
-              <!-- <p>Showing all {{productList?.length}} results</p> -->
             </div>
             <div class="col-12 col-sm-4 text-center text-sm-right">
               <ul class="nav nav-tabs ml-auto">
@@ -36,7 +35,8 @@
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                 <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let item of productList |filter:filter ">
+                  <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4"
+                    *ngFor="let item of productList | paginate: { itemsPerPage: 9, currentPage: page };">
                     <div class="products-single fix">
                       <div class="box-img-hover">
                         <div class="type-lb">
@@ -65,9 +65,15 @@
 
 
                 </div>
+                <div class="row">
+                  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+                </div>
+
               </div>
               <div role="tabpanel" class="tab-pane fade" id="list-view">
-                <div class="list-view-box" *ngFor="let item of productList">
+                <div class="list-view-box"
+                  *ngFor="let item of productList | paginate: { itemsPerPage: 9, currentPage: page };">
                   <div class="row">
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                       <div class="products-single fix">
@@ -100,6 +106,11 @@
                       </div>
                     </div>
                   </div>
+
+                </div>
+                <div class="row">
+                  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
                 </div>
 
               </div>
