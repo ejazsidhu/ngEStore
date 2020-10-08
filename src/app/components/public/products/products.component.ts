@@ -12,19 +12,22 @@ export class ProductsComponent implements OnInit {
   productList: any = [];
   ProductService;
   Product;
-  
+  serverIp = 'https://re.rtdtradetracker.com'
 
-  constructor() { }
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
 
     this.productList = (data as any).default;
-    console.log(this.productList)
+    // console.log(this.productList)
+    this.showProduct();
 
   }
   showProduct() {
-    this.ProductService.getProduct()
-      .subscribe((data: ProductService) => this.ProductService = {
+    this.productService.getProduct()
+      .subscribe((data) => {
+        this.productList = data
       });
   }
 
