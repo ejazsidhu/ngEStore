@@ -7,6 +7,7 @@ import { BottomSliderComponent } from '../components/layout/bottom-slider/bottom
 import { FooterComponent } from '../components/layout/footer/footer.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   imports: [
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   exports: [
     TopBannerComponent,
@@ -26,6 +27,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MainSliderComponent,
     BottomSliderComponent,
     FooterComponent,
+    RouterModule,
 
     NgxPaginationModule]
 })

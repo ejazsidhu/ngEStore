@@ -53,12 +53,12 @@
                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i
                                   class="far fa-heart"></i></a></li>
                           </ul> -->
-                          <a class="cart" href="#">Add to Cart</a>
+                          <a class="cart cursor-pointer" (click)="addToCart(item)">Add to Cart</a>
                         </div>
                       </div>
                       <div class="why-text">
-                        <h4>{{item?.title}}</h4>
-                        <h5>{{item?.price | currency}}</h5>
+                        <h4 (click)="addToCart(item)">{{item?.title}}</h4>
+                        <h5>{{item?.price }}</h5>
                       </div>
                     </div>
                   </div>
@@ -102,7 +102,7 @@
                         <h4>{{item?.title}}</h4>
                         <h5> <del>$ 60.00</del> $40.79</h5>
                         <p>{{item?.description}}</p>
-                        <a class="btn hvr-hover" href="#">Add to Cart</a>
+                        <a class="btn hvr-hover cursor-pointer" (click)="addToCart($event,item)">Add to Cart</a>
                       </div>
                     </div>
                   </div>

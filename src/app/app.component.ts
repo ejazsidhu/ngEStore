@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ng-e-store';
   constructor() {
-    console.log = function () { }
+    // console.log = function () { }
+    // console.error = function () { }
   }
 }
