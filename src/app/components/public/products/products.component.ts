@@ -10,8 +10,8 @@ import { ProductService } from './product.service';
 export class ProductsComponent implements OnInit {
 
   productList: any = [];
-  ProductService: any = [];
-  Product: any = [];
+  ProductService;
+  Product;
   
 
   constructor() { }
