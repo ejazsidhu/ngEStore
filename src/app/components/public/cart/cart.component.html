@@ -16,27 +16,29 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let item of cart,let i=index">
+                <!-- {{item?.item|json}} -->
                 <td class="thumbnail-img">
-                  <a href="#">
-                    <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
+                  <a>
+                    <img class="img-fluid" src="{{serverIp}}{{item?.item?.imageUrl}}"
+                      (error)="errorImageCalled($event)" />
                   </a>
                 </td>
                 <td class="name-pr">
-                  <a href="#">
-                    Lorem ipsum dolor sit amet
+                  <a>
+                    {{item?.item?.title}}
                   </a>
                 </td>
                 <td class="price-pr">
-                  <p>$ 80.0</p>
+                  <p>{{item?.item?.price}}</p>
                 </td>
-                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
+                <td class="quantity-box"><input type="number" size="4" value="{{item?.quantity}}" min="0" step="1"
                     class="c-input-text qty text"></td>
                 <td class="total-pr">
-                  <p>$ 80.0</p>
+                  <p>{{getTotal(item?.item,item?.quantity)}}</p>
                 </td>
                 <td class="remove-pr">
-                  <a href="#">
+                  <a class="cursor-pointer" (click)="removeFromCart(i,item?.item)">
                     <i class="fas fa-times"></i>
                   </a>
                 </td>

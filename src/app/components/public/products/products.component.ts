@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { CartService } from '../cart.service';
 import * as data from "../products.json";
 import { ProductService } from './product.service';
@@ -13,7 +14,7 @@ export class ProductsComponent implements OnInit {
   productList: any = [];
   ProductService;
   Product;
-  serverIp = 'https://re.rtdtradetracker.com';
+  serverIp = environment.serverIp;
   search: '';
   page: number = 0;
   cart: any[] = [];
@@ -49,8 +50,6 @@ export class ProductsComponent implements OnInit {
     console.log(this.cart);
 
     this.cart = [...this.cart, item.id];
-
-
     this.cartService.updateCart(this.cart);
     this.cartService.cartData.subscribe(data => {
       // console.log('updating data', data)
