@@ -14,6 +14,7 @@ export class CartComponent {
   cartDetail: any = [];
   serverIp = environment.serverIp
   count: any;
+  updatedQuantity: any;
 
   constructor(private productService: ProductService, private cartService: CartService) {
     this.showProduct();
@@ -35,7 +36,7 @@ export class CartComponent {
         this.count.splice(i, 1);
       }
     }
-    console.log("count after remove item", this.count)
+    // console.log("count after remove item", this.count)
     this.cartService.updateCart(this.count)
   }
 
@@ -47,21 +48,23 @@ export class CartComponent {
       });
   }
 
-  updateCart(item, action) {
-    let cart = [];
+  updateCart(event, index) {
 
-    switch (action) {
-      case 'remove-item':
-        let i = this.count.findIndexOf(item.id);
-        this.count.slice(i, 0)
-        this.cartService.updateCart(this.count);
-        break;
+    this.cart[index].quantity = this.updatedQuantity;
 
-      default:
-        break;
-    }
 
-    this.cartService.updateCart(cart);
+    // switch (action) {
+    //   case 'remove-item':
+    //     let i = this.count.findIndexOf(item.id);
+    //     this.count.slice(i, 0)
+    //     this.cartService.updateCart(this.count);
+    //     break;
+
+    //   default:
+    //     break;
+    // }
+
+    // this.cartService.updateCart(cart);
   }
   getCartData() {
     this.cartService.cartData.subscribe((data: any) => {

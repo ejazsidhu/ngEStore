@@ -33,6 +33,7 @@
                   <p>{{item?.item?.price}}</p>
                 </td>
                 <td class="quantity-box"><input type="number" size="4" value="{{item?.quantity}}" min="0" step="1"
+                    [(ngModel)]="updatedQuantity" name="updatedQuantity" (change)="updateCart($event,i)"
                     class="c-input-text qty text"></td>
                 <td class="total-pr">
                   <p>{{getTotal(item?.item,item?.quantity)}}</p>
