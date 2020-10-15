@@ -1,8 +1,11 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { ProductService } from '../products/product.service';
 import * as data from "../products.json";
-import { environment } from 'src/environments/environment';
+import { Config } from 'src/assets/config';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -12,7 +15,7 @@ export class CartComponent {
   cart: any = [];
   productList = [];
   cartDetail: any = [];
-  serverIp = environment.serverIp
+  serverIp = Config.BASE_URI;
   count: any;
   updatedQuantity: any;
 

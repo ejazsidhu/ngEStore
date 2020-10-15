@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Config } from 'src/assets/config';
 import { environment } from 'src/environments/environment';
 import { CartService } from '../cart.service';
 import * as data from "../products.json";
@@ -14,7 +15,7 @@ export class ProductsComponent implements OnInit {
   productList: any = [];
   ProductService;
   Product;
-  serverIp = environment.serverIp;
+  serverIp = Config.BASE_URI;
   search: '';
   page: number = 0;
   cart: any[] = [];
