@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  serverIp: "https://re.rtdtradetracker.com"
 };
 
 /*
